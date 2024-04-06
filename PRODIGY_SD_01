@@ -1,1 +1,59 @@
+package Task_01;
 
+import java.util.Scanner;
+
+public class TemperatureConverter {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Temperature Converter");
+		System.out.println("Enter the temperature value:");
+		double temperature = scanner.nextDouble();
+
+		System.out.println("Enter the original unit of measurement (Celsius, Fahrenheit, or Kelvin):");
+		String originalUnit = scanner.next().toLowerCase();
+
+		switch (originalUnit) {
+		case "celsius":
+			convertFromCelsius(temperature);
+			break;
+		case "fahrenheit":
+			convertFromFahrenheit(temperature);
+			break;
+		case "kelvin":
+			convertFromKelvin(temperature);
+			break;
+		default:
+			System.out.println("Invalid input! Please enter either Celsius, Fahrenheit, or Kelvin.");
+		}
+
+		scanner.close();
+	}
+
+	private static void convertFromKelvin(double temperature) {
+		  double celsius = temperature - 273.15;
+	        double fahrenheit = (temperature - 273.15) * 9 / 5 + 32;
+	        System.out.print(temperature + " Kelvin is equal to: ");
+	        System.out.print(celsius + " degrees Celsius and ");
+	        System.out.print(fahrenheit + " degrees Fahrenheit");
+		
+	}
+
+	public static void convertFromCelsius(double temperature) {
+		double fahrenheit = (temperature * 9 / 5) + 32;
+		double kelvin = temperature + 273.15;
+		System.out.println(temperature + " degrees Celsius is equal to:");
+		System.out.println(fahrenheit + " degrees Fahrenheit");
+		System.out.println(kelvin + " Kelvin");
+	}
+
+	public static void convertFromFahrenheit(double temperature) {
+		double celsius = (temperature - 32) * 5 / 9;
+		double kelvin = (temperature - 32) * 5 / 9 + 273.15;
+		System.out.println(temperature + " degrees Fahrenheit is equal to:");
+		System.out.println(celsius + " degrees Celsius");
+		System.out.println(kelvin + " Kelvin");
+	}
+
+	
+}
