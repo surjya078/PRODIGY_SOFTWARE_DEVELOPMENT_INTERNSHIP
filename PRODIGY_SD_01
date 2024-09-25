@@ -8,7 +8,7 @@ public class TemperatureConverter {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Temperature Converter");
+		System.out.println("Temperature Converter"); 
 		System.out.println("Enter the temperature value:");
 		double temperature = scanner.nextDouble();
 
